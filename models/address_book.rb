@@ -35,6 +35,16 @@ require "csv"
     end
   end
 
+  def iterative_search(name)
+    @entries.each do |entry|
+      if entry.name == name
+        return entry
+      end
+    end
+
+    return nil
+  end
+
   # Search AddressBook for a specific entry by name
   def binary_search(name)
     # #1 save index of leftmost and rightmost items in the array
@@ -47,7 +57,7 @@ require "csv"
       mid = (lower + upper) / 2
       mid_name = entries[mid].name
 
-      # #4 - compare name we are searching for and begin divide and conquer 
+      # #4 - compare name we are searching for and begin divide and conquer
       if name == mid_name
         return entries[mid]
       elsif name < mid_name
