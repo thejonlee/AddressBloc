@@ -15,7 +15,8 @@ class MenuController
     puts "2 - Create an entry"
     puts "3 - Search for an entry"
     puts "4 - Import entries from a CSV"
-    puts "5 - Exit"
+    puts "5 - Detonate entire address book"
+    puts "6 - Exit"
     print "Enter your selection: "
 
     # #3 - retrieve user input from command line
@@ -40,6 +41,11 @@ class MenuController
         read_csv
         main_menu
       when 5
+        system "clear"
+        @address_book.detonate
+        puts "Detonation complete! All entries deleted."
+        main_menu
+      when 6
         puts "Good-bye!"
         # #8 - terminate program. 0 signals program to exit w/o error.
         exit(0)

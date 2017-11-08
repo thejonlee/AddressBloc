@@ -9,6 +9,10 @@ require "csv"
       @entries = []
     end
 
+  def detonate
+    @entries = []
+  end
+
   def add_entry(name, phone_number, email)
     # #9 - create variable to store insertion index
     index = 0
@@ -47,7 +51,7 @@ require "csv"
       mid = (lower + upper) / 2
       mid_name = entries[mid].name
 
-      # #4 - compare name we are searching for and begin divide and conquer 
+      # #4 - compare name we are searching for and begin divide and conquer
       if name == mid_name
         return entries[mid]
       elsif name < mid_name
